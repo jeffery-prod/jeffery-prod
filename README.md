@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/jeffery-prod/jeffery-prod/main/banner.gif)
+![](https://raw.githubusercontent.com/jeffery-prod/jeffery-prod/main/banner.gif) <!-- If you would like to generate a banner like this for yourself, utilize tsParticles.js and gif.js -->
 
 This GitHub is mostly where I *experiment, learn, and build* things that I find interesting.
 
