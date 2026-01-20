@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/jeffery-prod/jeffery-prod/main/github-banner.gif)
+![](https://raw.githubusercontent.com/jeffery-prod/jeffery-prod/main/banner.gif)
 
 This GitHub is mostly where I *experiment, learn, and build* things that I find interesting.
 
