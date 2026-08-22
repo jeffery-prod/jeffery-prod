@@ -1,13 +1,3 @@
-// Generates the XP-themed SVG stat cards into assets/.
-// Zero dependencies (Node 18+ global fetch). This is the script a scheduled
-// GitHub Action would run before committing the regenerated SVGs -- the same
-// pattern cdzombak and Grant-Steinfeld use, and the reason nothing in this
-// README is hotlinked to a third-party service that can 503.
-//
-//   node scripts/build-cards.mjs
-//
-// Set GITHUB_TOKEN to raise the API rate limit (optional locally, required in CI).
-
 import { writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -39,8 +29,6 @@ const FONT = "Tahoma, 'Segoe UI', Verdana, DejaVu Sans, sans-serif";
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-// Round an axis maximum up to a value that divides cleanly in half, so the
-// mid gridline lands on a whole number instead of something like 4.5.
 const niceMax = (m) => {
   if (m <= 2) return 2;
   if (m <= 5) return 5;
@@ -103,7 +91,6 @@ async function collect() {
       const langs = await gh("/repos/" + USER + "/" + repo.name + "/languages");
       for (const [k, v] of Object.entries(langs)) langBytes[k] = (langBytes[k] || 0) + v;
     } catch {
-      /* ignore */
     }
   }
   const sorted = Object.entries(langBytes).sort((a, b) => b[1] - a[1]);
@@ -124,9 +111,6 @@ async function collect() {
 
 /* ---------- XP window chrome ---------- */
 
-// The three Luna caption-button glyphs, drawn white inside a 20x18 button
-// whose top-left corner is at (bx, 6): minimize is a low bar, maximize is a
-// window outline with a heavy title edge, close is an X.
 function captionGlyph(kind, bx) {
   const cx = bx + 10;
   const cy = 15;
@@ -310,8 +294,6 @@ function cardWeek(d, x, y, w, h) {
       const bWidth = cellW - 20;
       const by = y + padT + barMax - bh;
       const weekend = i === 0 || i === 6;
-      // Tall bars carry their value inside, so the tallest one never collides
-      // with the caption above the plot.
       const inside = bh > 26;
       const labelY = inside ? by + 15 : by - 5;
       const labelFill = inside ? "#FFFFFF" : C.ink;
