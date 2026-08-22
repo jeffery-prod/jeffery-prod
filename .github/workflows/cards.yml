@@ -1,0 +1,46 @@
+name: Rebuild profile cards
+
+# The mechanism borrowed from Grant-Steinfeld's weather widget: a scheduled job
+# regenerates the SVGs and commits them back, so the profile updates itself.
+# Committing the output (rather than hotlinking a card service) is what keeps
+# the profile from showing broken images when that service is rate-limited.
+
+on:
+  schedule:
+    - cron: "17 8 * * *" # daily, 08:17 UTC
+  workflow_dispatch: # manual "run now" button
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build-cards.mjs"
+      - ".github/workflows/cards.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/build-cards.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "jeffery-prod"
+          git config user.email "241513000+jeffery-prod@users.noreply.github.com"
+          git add assets/*.svg
+          if git diff --staged --quiet; then
+            echo "No change to the cards."
+          else
+            git commit -m "Rebuild profile cards"
+            git push
+          fi
