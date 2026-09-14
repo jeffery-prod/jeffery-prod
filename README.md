@@ -2,7 +2,7 @@
 
 <table>
 <tr>
-<td width="50%">
+<td width="50%" valign="top">
 
 ```
 JEFFERY-PROD BIOS v2.0            (C) 2026
