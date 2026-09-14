@@ -5,14 +5,16 @@
 <td width="50%">
 
 ```
-JEFFERY-PROD BIOS v2.0                (C) 2026
-----------------------------------------------
-Location ....... New York City
-Memory test .... 640K OK
-Drives ......... C:\projects  D:\ideas  E:\lab
-Banner ......... redrawn every Monday
+JEFFERY-PROD BIOS v2.0            (C) 2026
+------------------------------------------
+User ........ Jeffery Frederic
+Role ........ Software engineer
+Location .... New York City
+Time zone ... Eastern (ET)
 
-Press any key to keep scrolling_
+Stack ....... TypeScript, Astro, Python
+System ...... Windows, macOS, Linux
+Shell ....... PowerShell, Git Bash
 ```
 
 </td>
