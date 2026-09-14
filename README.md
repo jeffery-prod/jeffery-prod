@@ -20,7 +20,7 @@ Press any key to keep scrolling_
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/skyline-dark.gif">
-  <img alt="The Empire State Building, One World Trade Center and the Chrysler Building, rotating" src="assets/skyline-light.gif" width="300">
+  <img alt="The Empire State Building, One World Trade Center and the Chrysler Building, rotating" src="assets/skyline-light.gif" width="100%">
 </picture>
 
 </td>
