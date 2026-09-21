@@ -22,7 +22,7 @@ Shell ....... PowerShell, Git Bash
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/skyline-dark.gif">
-  <img alt="The Empire State Building, One World Trade Center and the Chrysler Building, rotating" src="assets/skyline-light.gif" width="100%">
+  <img alt="One World Trade Center, the Empire State Building and the Chrysler Building rotating in descending height order" src="assets/skyline-light.gif" width="100%">
 </picture>
 
 </td>
