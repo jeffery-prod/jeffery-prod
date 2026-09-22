@@ -12,9 +12,13 @@ Role ........ Software engineer
 Location .... New York City
 Time zone ... Eastern (ET)
 
-Stack ....... TypeScript, Astro, Python
+Stack ....... Java, Spring Boot, TypeScript, Python
 System ...... Windows, macOS, Linux
 Shell ....... PowerShell, Git Bash
+
+Working on: generative art, AI tooling,
+stock & finance programs, motion graphics,
+and messing around with a Raspberry Pi Pico.
 ```
 
 </td>
