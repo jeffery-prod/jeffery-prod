@@ -9,7 +9,7 @@ JEFFERY-PROD BIOS v2.0            (C) 2026
 ------------------------------------------
 User ........ Jeffery
 Role ........ Software engineer
-Location .... New York City
+Location .... NYC Metro
 Time zone ... Eastern (ET)
 
 Stack ....... Java, Spring Boot, TypeScript, Python
